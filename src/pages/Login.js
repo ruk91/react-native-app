@@ -78,8 +78,8 @@ export default class Login extends Component<{}> {
               <KeyboardAvoidingView behavior="position"> 
           
                 <View style={styles.login_logo_container}>
-                  <Image source={require('../assets/hutchWhite.png')} resizeMode="stretch" style={styles.login_logo} />
-                  <Text style={{fontSize:moderateScale(30,0.10),color:'#fff',marginLeft:scale(115),fontFamily: 'Signika-SemiBold'}}>Selfcare</Text>
+                  {/* <Image source={require('../assets/hutchWhite.png')} resizeMode="stretch" style={styles.login_logo} /> */}
+                  {/* <Text style={{fontSize:moderateScale(30,0.10),color:'#fff',marginLeft:scale(115),fontFamily: 'Signika-SemiBold'}}>Kema Kade</Text> */}
                 </View>
 
                 <View style={styles.bodyContainer}>
@@ -122,7 +122,8 @@ container: {
   },
   login_logo_container:{
     flex: .2,
-    justifyContent:'flex-start'
+    justifyContent:'flex-start',
+    marginTop: scale(110),
   },
   login_logo:{
     marginTop: scale(10),
