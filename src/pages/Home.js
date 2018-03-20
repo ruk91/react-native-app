@@ -11,10 +11,34 @@ import { scale, moderateScale, verticalScale} from '../../Scaling';
 import VxTextBox from '../Components/VxTextBox';
 import VxButton from '../Components/VxButton';
 import VxTextBottom from '../Components/VxTextBottom';
+import VxIcon from '../Components/VxIcon';
 
-export default class Login extends Component<{}> {
+export default class Home extends Component<{}> {
       static navigationOptions = {
-        header: null,
+        title: 'Home Page',
+        headerLeft: <VxIcon 
+                      //onPress={() => navMenu()}
+                      iconName={'navicon'} 
+                      style={{ 
+                          fontSize:moderateScale(20, 0.5), 
+                          color: '#FFF', 
+                          marginLeft:moderateScale(10, 0.5)}}
+                      PageNavigation='Profile' 
+                      //navigation={this.props.navigation} 
+                    />,
+
+        headerTintColor: '#fff',
+        headerStyle:{
+          titleStyle: {
+            color: '#fff'
+          },
+          
+        },
+        headerStyle: { backgroundColor: 'transparent', position: 'absolute',top: 0,left: 0,right: 0,},
+        headerTitleStyle: {alignSelf: 'center',marginRight:50, color: '#fff',marginLeft:scale(80)},
+          headerIconStyle: {
+            color: '#fff'},
+            tintColor: '#fff', 
         };
 
         constructor(props) {
@@ -28,17 +52,6 @@ export default class Login extends Component<{}> {
           };
           this._handleReachabilityChange = this._handleReachabilityChange.bind(this);
         }
-     
-        componentDidMount() {
-        //   NetInfo.isConnected.addEventListener('change', this._handleReachabilityChange);
-        //   NetInfo.isConnected.fetch().done(
-        //     (isConnected) => { this.setState({isConnected}); }
-        //   );
-        }
-  
-        componentWillUnmount() {
-          //NetInfo.isConnected.removeEventListener('change', this._handleReachabilityChange);
-        }
     
         _handleReachabilityChange(isConnected) {
           this.setState({
@@ -46,26 +59,6 @@ export default class Login extends Component<{}> {
           });
         }
 
-      email(email) {
-        this.setState((previousState) => {
-            return {
-              typedEmail: email
-            }
-            console.log(typedEmail);
-          })
-      }
-  
-      password(password) {
-        this.setState((previousState) => {
-            return {
-              typedPassword: password
-            }
-            console.log(typedPassword);
-          })
-      }
-      helloWorld() {
-        console.log('You tapped the click2!')
-      }
 
   render() {
    
@@ -85,21 +78,15 @@ export default class Login extends Component<{}> {
                 <View style={styles.bodyContainer}>
 
                   <View style={styles.container_input}>
-                    <VxTextBox placeholder='Mobile Number' onChangeText={(email) => this.email(email)}></VxTextBox>
-                    <Text style={{color: '#9c9c9c'}}>{this.state.typedEmail}</Text>
-                    <VxTextBox placeholder='Password' secureTextEntry={true} onChangeText={(password) => this.password(password)}></VxTextBox>
-                    <Text style={{color: '#9c9c9c'}}>{this.state.typedPassword}</Text>
-
-                    <VxButton BtnText='Login' PageNavigation='Home' navigation={this.props.navigation} method={this.helloWorld}></VxButton>
-                  
+                   
                   </View>
                 </View>
 
-                  <View style={styles.bottomContainer}>
+                  {/* <View style={styles.bottomContainer}>
                     <Text style={{fontSize:moderateScale(18,0.10),color:'#ec6708', fontFamily: 'Signika-Regular',}}>Don't have an account?
                       <Text style={{fontSize:moderateScale(18,0.10),color:'#ec6708', fontFamily: 'Signika-Bold'}}> Sign up</Text>    
                     </Text>
-                  </View>
+                  </View> */}
 
             </KeyboardAvoidingView>
           </View>

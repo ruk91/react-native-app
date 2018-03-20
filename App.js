@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StackNavigator, DrawerNavigator, NavigationActions,TabNavigator,Icon } from 'react-navigation';
 import Login from './src/pages/Login';
+import Home from './src/pages/Home';
 
 import {
   Platform,
@@ -19,6 +20,7 @@ export default class App extends Component<{}> {
       Text.defaultProps.allowFontScaling=false
       const MainNavigator = StackNavigator({
             Login: { screen: Login },
+            Home: { screen: Home}
             });
 
     return <MainNavigator/>;
