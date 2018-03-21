@@ -7,6 +7,10 @@ import {
   View,StatusBar,TouchableOpacity,TextInput,Button, NetInfo,Alert,KeyboardAvoidingView
 } from 'react-native';
 import { scale, moderateScale, verticalScale} from '../../Scaling';
+import MAIcon from 'react-native-vector-icons/MaterialIcons';
+import FUIcon from 'react-native-vector-icons/Foundation';
+import FEIcon from 'react-native-vector-icons/Feather';
+import { Col, Row, Grid } from "react-native-easy-grid";
 
 import VxTextBox from '../Components/VxTextBox';
 import VxButton from '../Components/VxButton';
@@ -14,32 +18,43 @@ import VxTextBottom from '../Components/VxTextBottom';
 import VxIcon from '../Components/VxIcon';
 
 export default class Home extends Component<{}> {
-      static navigationOptions = {
-        title: 'Home Page',
-        headerLeft: <VxIcon 
-                      //onPress={() => navMenu()}
-                      iconName={'navicon'} 
-                      style={{ 
-                          fontSize:moderateScale(20, 0.5), 
-                          color: '#FFF', 
-                          marginLeft:moderateScale(10, 0.5)}}
-                      PageNavigation='Profile' 
-                      //navigation={this.props.navigation} 
-                    />,
+  static navigationOptions = {
+    title: 'Home',
+    headerLeft:  
+      <MAIcon
+        style={{paddingLeft:moderateScale(15,0.50)}}
+        onPress={ () => navigation.navigate('Home')}
+        name='menu'
+        size={moderateScale(30, 0.25)}
+        color="#fff"
+      />,
+    headerTintColor: '#fff',
+    headerStyle:{
+      titleStyle: {
+        color: '#fff',
+        fontFamily: 'Signika-Regular'
+      },
+      
+    },
+    headerStyle: { backgroundColor: 'transparent', position: 'absolute',top: 0,left: 0,right: 0,},
+    headerTitleStyle: {alignSelf: 'center',marginRight:50, color: '#fff',marginLeft:scale(80)},
+      headerIconStyle: {
+        color: '#fff'},
+        tintColor: '#fff', 
+        headerRight:
+          <Grid style={{alignItems:'center',justifyContent:'center'}}>
+            <Col>
+                <MAIcon
+                    style={{paddingRight:moderateScale(15,0.50)}}
+                    onPress={() => rendered_this.logout()}
+                    name='settings'
+                    size={moderateScale(30, 0.25)}
+                    color="#fff"
+                />
+            </Col>
+          </Grid>,
+    };
 
-        headerTintColor: '#fff',
-        headerStyle:{
-          titleStyle: {
-            color: '#fff'
-          },
-          
-        },
-        headerStyle: { backgroundColor: 'transparent', position: 'absolute',top: 0,left: 0,right: 0,},
-        headerTitleStyle: {alignSelf: 'center',marginRight:50, color: '#fff',marginLeft:scale(80)},
-          headerIconStyle: {
-            color: '#fff'},
-            tintColor: '#fff', 
-        };
 
         constructor(props) {
           super(props);
@@ -64,7 +79,7 @@ export default class Home extends Component<{}> {
    
   return (
     <View style={{flex: 1}}>
-      <ImageBackground source={require('../assets/bg.jpg')} style={styles.container}>
+      <ImageBackground source={require('../assets/bg.png')} style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>   
           <StatusBar hidden={true} />         
             <View style={styles.keyContainer}>

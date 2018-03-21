@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { StackNavigator, DrawerNavigator, NavigationActions,TabNavigator,Icon } from 'react-navigation';
 import Login from './src/pages/Login';
 import Home from './src/pages/Home';
+import Otp from './src/pages/Otp';
+import Register from './src/pages/Register';
+import ResetPassword from './src/pages/ResetPassword';
 
 import {
   Platform,
@@ -20,7 +23,10 @@ export default class App extends Component<{}> {
       Text.defaultProps.allowFontScaling=false
       const MainNavigator = StackNavigator({
             Login: { screen: Login },
-            Home: { screen: Home}
+            Home: { screen: Home},
+            Otp: {screen: Otp},
+            Register: {screen: Register},
+            ResetPassword: {screen: ResetPassword},
             });
 
     return <MainNavigator/>;
