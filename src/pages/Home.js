@@ -83,27 +83,17 @@ export default class Home extends Component<{}> {
         <ScrollView showsVerticalScrollIndicator={false}>   
           <StatusBar hidden={true} />         
             <View style={styles.keyContainer}>
-              <KeyboardAvoidingView behavior="position"> 
-          
-                <View style={styles.login_logo_container}>
-                  {/* <Image source={require('../assets/hutchWhite.png')} resizeMode="stretch" style={styles.login_logo} /> */}
-                  {/* <Text style={{fontSize:moderateScale(30,0.10),color:'#fff',marginLeft:scale(115),fontFamily: 'Signika-SemiBold'}}>Kema Kade</Text> */}
-                </View>
+            <KeyboardAvoidingView behavior="position"> 
+                <View style={{paddingLeft: scale(10),paddingRight: scale(10),}}>
+                  <View style={styles.bodyContainer}>
 
-                <View style={styles.bodyContainer}>
-
-                  <View style={styles.container_input}>
-                   
+                    <View style={styles.container_input}>
+   
+                    </View>
                   </View>
                 </View>
-
-                  {/* <View style={styles.bottomContainer}>
-                    <Text style={{fontSize:moderateScale(18,0.10),color:'#ec6708', fontFamily: 'Signika-Regular',}}>Don't have an account?
-                      <Text style={{fontSize:moderateScale(18,0.10),color:'#ec6708', fontFamily: 'Signika-Bold'}}> Sign up</Text>    
-                    </Text>
-                  </View> */}
-
             </KeyboardAvoidingView>
+
           </View>
         </ScrollView>
       </ImageBackground>
@@ -148,9 +138,22 @@ container: {
     paddingRight: scale(10),
   },
   bodyContainer:{
-    flex: 0.8,
-    marginTop: scale(30),
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
+    flex: 1,
+    height: scale(520),
+    borderRadius: 20,
+    backgroundColor:'#fff',
+    opacity: 0.8,
+    marginTop: scale(50),
+  },
+  middleView:{
+    //flex: 1,
+    height: scale(120),
+    borderRadius: 10,
+    backgroundColor:'#fff',
+    width: scale(300),
+    marginTop: scale(10),
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
 });
