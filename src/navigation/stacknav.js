@@ -22,7 +22,7 @@ const stackNav = StackNavigator({
     Main: {
         screen: MainScreen,
         navigationOptions:({navigation}) => ({
-            title: "Infotel - 2018",
+            title: "Sleatra",
             headerLeft:(
               <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
                 <MAIcon name="menu" size={30} />

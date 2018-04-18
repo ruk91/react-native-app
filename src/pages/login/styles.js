@@ -22,6 +22,12 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center'
 	 },
+	 slide3:{
+		flex: 0.9,
+		//marginTop: scale(30),
+		justifyContent: 'center',
+		alignItems: 'center'
+	 },
 	 buttonContainer: {
 		justifyContent: 'center',
 		alignItems: 'center'
