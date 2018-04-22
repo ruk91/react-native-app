@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
 import { DrawerNavigator} from 'react-navigation';
 import Icon from "react-native-vector-icons/FontAwesome";
-import tabNav from './src/navigation/tabnav'
-import { View, Text, StyleSheet, Button, TouchableOpacity, ImageBackground } from 'react-native';
-import { Navigator } from 'react-native-deprecated-custom-components';
+import { View, Text, StyleSheet, Button, TouchableOpacity, ImageBackground,Dimensions, Platform, DrawerView, Image } from 'react-native';
+import tabNav from './src/navigation/tabnav';
+//import {Navigator} from 'react-native-deprecated-custom-components';
+import main from './src/pages/main/main';
+import SecondScreen from './screens/SecondScreen';
+import SideBar from "./src/SideBar/SideBar.js";
 
-let height = Navigator.NavigationBar.Styles.General.TotalNavHeight
+//let headerHeight = Navigator.NavigationBar.Styles.General.TotalNavHeight
+const window = Dimensions.get('window');
 
-const drawernav = DrawerNavigator({
-    DrawerItem1: {
-        screen: tabNav,
-        navigationOptions: {
-            //drawerLabel: "Drawer Item 1",
-            drawerIcon: ({ tintColor }) => 
-            <View style={{alignItems:'center', justifyContent:'center', marginTop: height}}>
-                <Text>test</Text>
-            </View>
-        },
+const DrawerExample = DrawerNavigator(
+    {
+      main:{
+        path:'/',
+        screen:main,
+      },
+      SecondScreen:{
+        path:'/',
+        screen:SecondScreen,
+      },
     },
-    DrawerItem2: {
-        screen: tabNav,
-        navigationOptions: {
-            drawerLabel: "Scan Me",
-            drawerIcon: ({ tintColor }) => <Icon name="rocket" size={24} />
-        },
-    },
-    DrawerItem3: {
-        screen: tabNav,
-        navigationOptions: {
-            drawerLabel: "Drawer Item 3",
-            drawerIcon: ({ tintColor }) => 
-            <Icon name="rocket" size={24} />
-        },
-    },
-});
 
-export default drawernav;
+    {
+        contentComponent: props => <SideBar/>,
+        drawerWidth: (window.width)*0.8,
+      }
+  );
+  export default DrawerExample;
+
+
