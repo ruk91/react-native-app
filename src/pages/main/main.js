@@ -67,6 +67,7 @@ class MainScreen extends Component {
     
     render() {
         return (
+            // <View style={{flex: 1,paddingBottom: (deviceW.width)*0.2}}>
             <ImageBackground source={pic} style={styles.screenBg}>
                 <TabNavigator style={styles.container}>
                     <TabNavigator.Item
@@ -125,6 +126,7 @@ class MainScreen extends Component {
                     </TabNavigator.Item>
                 </TabNavigator>
             </ImageBackground>
+            // </View>
         )
     }
 }

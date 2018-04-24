@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
 		width: Metrics.WIDTH,
 		height: Metrics.WIDTH,
 		backgroundColor: 'black',
+		
 	},
 	logo_horizontal:{   
 		height: (deviceW.width)*0.07,
